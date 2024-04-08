@@ -25,7 +25,9 @@ jobs:
           npm install
 
       - name: Production build
-        run: npm run build
+        run: | 
+          cd frontend/muchachos
+          npm run build
 
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
