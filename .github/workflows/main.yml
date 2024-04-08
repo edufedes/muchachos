@@ -28,7 +28,6 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           install: false
-          project: ./frontend/muchachos/
           working-directory: ./frontend/muchachos/
           build: npm run build
           start: npm start
