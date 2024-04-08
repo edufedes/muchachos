@@ -27,6 +27,7 @@ jobs:
       - name: Cypress Test Run
         uses: cypress-io/github-action@v6
         with:
+          install: false
           working-directory: ./frontend/muchachos
           build: npm run build
           start: npm start
