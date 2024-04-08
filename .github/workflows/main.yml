@@ -14,6 +14,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Cypress Test Run
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm start
+          browser: chrome
+          
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
