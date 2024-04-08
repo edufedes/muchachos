@@ -13,13 +13,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Cypress Test Run
-        uses: cypress-io/github-action@v6
-        with:
-          build: npm run build
-          start: npm start
-          browser: chrome
           
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -30,6 +23,15 @@ jobs:
         run: |
           cd frontend/muchachos
           npm install
+
+      - name: Cypress Test Run
+        uses: cypress-io/github-action@v6
+        with:
+          install: false
+          working-directory: ./frontend/
+          build: npm run build
+          start: npm start
+          browser: chrome
 
       - name: Production build
         run: | 
